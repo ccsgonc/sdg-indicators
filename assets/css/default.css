@@ -78,7 +78,8 @@ header {
         font-size: 12px; } }
 
 .navbar-brand {
-  display: block; }
+  display: block;
+  padding-right: 0; }
   .navbar-brand img {
     width: 300px; }
 
@@ -104,13 +105,12 @@ header {
   .navbar.navbar-default {
     background: transparent;
     border: none;
-    width: 380px;
     float: right; }
   .navbar .top-level {
     display: none; }
   .navbar #search {
     position: relative;
-    clear: left;
+    clear: both;
     float: right; }
     .navbar #search label {
       position: absolute;
