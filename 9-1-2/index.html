@@ -33,7 +33,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171025100119">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171025100537">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -158,16 +158,31 @@
 </ol>
 
   <div id="page-content">
-  <p>We are still looking for a suitable data source for this indicator. Please contact us if you think you can help by emailing <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a>.</p>
-
-
   
-    <hr/>
+
   
   </div>
 
   <section id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_9-1-2' data-country="UK"
-    data-charttitle="US Passenger-Kilometers by Air in Millions" data-measurementunit="" data-datasource="" data-geographicalarea="" data-showdata="false">
+    data-charttitle="Air passenger and air freight volumes" data-measurementunit="Passengers (Millions) / Tonnes (000s)" data-datasource="Department for Transport" data-geographicalarea="UK" data-showdata="true">
+
+    
+      
+    
+    
+
+    
+    <div id="toolbar">
+      <div id="fields"></div>
+    </div>
+    
+    <div id="units"></div>
+    <div class="plot-container">
+        
+<canvas></canvas>
+    </div>
+    
+
 
     
     
@@ -178,7 +193,11 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
       
-      <li role="presentation" class="nav-item  active">
+        <li role="presentation" class="nav-item active">
+          <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+        </li>
+      
+      <li role="presentation" class="nav-item  ">
         <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
       </li>
       <li role="presentation" class="nav-item">
@@ -194,7 +213,16 @@
     <!-- Tab panes -->
     <div class="tab-content">
       
-      <div role="tabpanel" class="tab-pane active" id="metadata">
+        <div role="tabpanel" class="tab-pane active" id="data">
+          
+            <h3>Air passenger and air freight volumes</h3>
+          
+          <p>Unit of Measurement: Passengers (Millions) / Tonnes (000s)</p>     
+          <a href="/sdg-indicators/data/indicator_9-1-2.csv" class="btn btn-primary btn-download" download='indicator_9-1-2.csv'>Download source CSV</a>
+          <div id="datatables"></div>
+        </div>
+      
+      <div role="tabpanel" class="tab-pane " id="metadata">
         <!-- National Metadata -->
         <div class="collapsible expanded">
           <h3>National Metadata<span> (Collapse)</span></h3>
@@ -242,7 +270,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            
+            Air passenger and air freight volumes
           
         </td>
         </tr>
@@ -268,7 +296,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            
+            Annually
           
         </td>
         </tr>
@@ -281,7 +309,7 @@
         <th scope="row">Earliest Available Data </th>
         <td>
           
-            
+            2005
           
         </td>
         </tr>
@@ -294,7 +322,7 @@
         <th scope="row">Geographic Coverage </th>
         <td>
           
-            
+            UK
           
         </td>
         </tr>
@@ -541,7 +569,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            
+            Passengers (Millions) / Tonnes (000s)
           
         </td>
         </tr>
@@ -690,7 +718,7 @@
         <div class="collapsible collapsed">
           <h3>Global Metadata<span> (Expand)</span></h3>
           <article>
-            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-9.pdf">metadata</a> is provided by the UN Statistics Division.</p>
+            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-09-01-02.pdf">metadata</a> is provided by the UN Statistics Division.</p>
             <table class="table table-hover">
   
     
@@ -759,7 +787,7 @@
         <th scope="row">Global Indicator Description </th>
         <td>
           
-            Average parcel shipping time/parcel shipping time standards, by country, both for domestic and international parcel services, and by product: this is the level of reliability of domestic or international parcel delivery services and for different products exchanged between countries. This ratio is determined after dividing the average parcel shipping time by the standard shipping time expected for parcels delivery at the national or international level, and at the product level depending on data availability. An alternative way of computing a similar quality of service ratio would be to use the percentage of parcels actually delivered within the quality standard, i.e. within the standard for shipping times. The standard for shipping time is the expected end-to-end transit time and is often expressed as the posting day + one, two , three, four or five days depending on the country geography and distance between countries.
+            
           
         </td>
         </tr>
@@ -785,8 +813,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            ICAO,
-ITF-OECD
+            International Civil Aviation Organization (ICAO)
           
         </td>
         </tr>
@@ -844,8 +871,8 @@ ITF-OECD
             
 
             
-              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-9.pdf">
-                Link
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-09-01-02.pdf">
+                United Nations Sustainable Development Goals Metadata Indicator 09-01-02
               </a>
             
             
@@ -984,6 +1011,289 @@ ITF-OECD
 
 
 
+  <h3>UK Data Source Metadata</h3>
+  <div class="row no-gutters">
+  
+   
+    
+    <div class="col-md-6">
+      <h4>Source 1</h4>
+      <table class="table table-hover">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            Department for Transport
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Periodicity </th>
+        <td>
+          
+            Annually
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Earliest Available Data </th>
+        <td>
+          
+            2005
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Geographical Coverage </th>
+        <td>
+          
+            UK
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Link to Data Source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://www.gov.uk/government/statistical-data-sets/avi01-traffic-passenger-numbers-mode-of-travel-to-airport">
+                Air traffic at UK airports
+              </a>
+            
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Release Date </th>
+        <td>
+          
+            08/12/16
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Next Release </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Statistical Classification </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Contact Details </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Other Information </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</table>
+
+    </div>
+    
+  </div>
+
 
       </div>
       
@@ -1019,7 +1329,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20171025100119'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20171025100537'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
