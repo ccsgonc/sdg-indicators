@@ -1,7 +1,6 @@
 /*! modernizr 3.5.0 (Custom Build) | MIT *
- * https://modernizr.com/download/?-blobconstructor-localstorage-setclasses !*/
-!function(e,n,o){function s(e,n){return typeof e===n}function t(){var e,n,o,t,a,l,c;for(var f in i)if(i.hasOwnProperty(f)){if(e=[],n=i[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(o=0;o<n.options.aliases.length;o++)e.push(n.options.aliases[o].toLowerCase());for(t=s(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)l=e[a],c=l.split("."),1===c.length?Modernizr[c[0]]=t:(!Modernizr[c[0]]||Modernizr[c[0]]instanceof Boolean||(Modernizr[c[0]]=new Boolean(Modernizr[c[0]])),Modernizr[c[0]][c[1]]=t),r.push((t?"":"no-")+c.join("-"))}}function a(e){var n=c.className,o=Modernizr._config.classPrefix||"";if(f&&(n=n.baseVal),Modernizr._config.enableJSClass){var s=new RegExp("(^|\\s)"+o+"no-js(\\s|$)");n=n.replace(s,"$1"+o+"js$2")}Modernizr._config.enableClasses&&(n+=" "+o+e.join(" "+o),f?c.className.baseVal=n:c.className=n)}var r=[],i=[],l={_version:"3.5.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var o=this;setTimeout(function(){n(o[e])},0)},addTest:function(e,n,o){i.push({name:e,fn:n,options:o})},addAsyncTest:function(e){i.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr,Modernizr.addTest("blobconstructor",function(){try{return!!new Blob}catch(e){return!1}},{aliases:["blob-constructor"]});var c=n.documentElement,f="svg"===c.nodeName.toLowerCase();Modernizr.addTest("localstorage",function(){var e="modernizr";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(n){return!1}}),t(),a(r),delete l.addTest,delete l.addAsyncTest;for(var u=0;u<Modernizr._q.length;u++)Modernizr._q[u]();e.Modernizr=Modernizr}(window,document);
-
+ * https://modernizr.com/download/?-blobconstructor-localstorage-opacity-setclasses !*/
+ !function(e,n,t){function o(e,n){return typeof e===n}function s(){var e,n,t,s,a,r,l;for(var f in c)if(c.hasOwnProperty(f)){if(e=[],n=c[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(s=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)r=e[a],l=r.split("."),1===l.length?Modernizr[l[0]]=s:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=s),i.push((s?"":"no-")+l.join("-"))}}function a(e){var n=f.className,t=Modernizr._config.classPrefix||"";if(u&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(o,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),u?f.className.baseVal=n:f.className=n)}function r(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):u?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}var i=[],c=[],l={_version:"3.5.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){c.push({name:e,fn:n,options:t})},addAsyncTest:function(e){c.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr,Modernizr.addTest("blobconstructor",function(){try{return!!new Blob}catch(e){return!1}},{aliases:["blob-constructor"]}),Modernizr.addTest("localstorage",function(){var e="modernizr";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(n){return!1}});var f=n.documentElement,u="svg"===f.nodeName.toLowerCase(),p=l._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""];l._prefixes=p,Modernizr.addTest("opacity",function(){var e=r("a").style;return e.cssText=p.join("opacity:.55;"),/^0.55$/.test(e.opacity)}),s(),a(i),delete l.addTest,delete l.addAsyncTest;for(var m=0;m<Modernizr._q.length;m++)Modernizr._q[m]();e.Modernizr=Modernizr}(window,document);
 Chart.plugins.register({
   id: 'rescaler',
   beforeInit: function (chart, options) {
@@ -114,6 +113,7 @@ var indicatorModel = function (options) {
   // general members:
   var that = this;
   this.data = options.data;
+  this.edgesData = options.edgesData;
   this.country = options.country;
   this.indicatorId = options.indicatorId;
   this.chartTitle = options.chartTitle;
@@ -123,6 +123,7 @@ var indicatorModel = function (options) {
   this.footnote = options.footnote;
   this.showData = options.showData;
   this.selectedFields = [];
+  this.allowedFields = [];
   this.selectedUnit = undefined;
   this.fieldValueStatuses = [];
   this.userInteraction = {};
@@ -142,7 +143,7 @@ var indicatorModel = function (options) {
           };
         })
       };
-    });
+    });    
 
     var extractUnique = function(prop) {
       return _.chain(that.data).pluck(prop).uniq().sortBy(function(year) {
@@ -158,6 +159,10 @@ var indicatorModel = function (options) {
     }
 
     that.selectableFields = _.pluck(that.fieldItemStates, 'field');
+
+    // determine if there are any 'child' fields: those that can
+    // only be selected if their parent has one or more selections:
+    that.allowedFields = _.difference(that.selectableFields, _.pluck(that.edgesData, 'To'));
 
     // prepare the data according to the rounding function:
     that.data = _.map(that.data, function(item) {
@@ -215,11 +220,42 @@ var indicatorModel = function (options) {
   };
 
   this.updateSelectedFields = function (fields, userInteraction) {
-    //console.log('Selected fields: ', fields);
     this.selectedFields = fields;
+
+    // update parent/child statuses:
+    var selectedFields = _.pluck(this.selectedFields, 'field');
+    _.each(this.edgesData, function(edge) {
+      if(!_.contains(selectedFields, edge.From)) {
+        // don't allow any child fields of this association:
+        this.selectedFields = _.without(this.selectedFields, _.findWhere(this.selectedFields, {
+          field: edge.From
+        }));
+      }
+    });
+
+    // reset the allowedFields:
+    this.allowedFields = _.difference(this.selectableFields, _.pluck(this.edgesData, 'To'));
+
+    // and reinstate based on selectedFields:
+    var parentFields = _.pluck(this.edgesData, 'From');
+    _.each(parentFields, function(parentField) {
+      if(_.contains(selectedFields, parentField)) {
+        // resinstate
+        that.allowedFields = that.allowedFields.concat(
+          _.chain(that.edgesData).where({ 'From' : parentField }).pluck('To').value()
+        );
+      }
+    });
+
+    // remove duplicates:
+    that.allowedFields = _.uniq(that.allowedFields);
+
     this.userInteraction = userInteraction;
     this.getData();
-    this.onSelectionUpdate.notify(fields);
+    this.onSelectionUpdate.notify({
+      selectedFields: fields,
+      allowedFields: that.allowedFields
+    });
   };
 
   this.updateSelectedUnit = function(selectedUnit) {
@@ -457,7 +493,8 @@ var indicatorModel = function (options) {
 
     if (initial) {
       this.onSeriesComplete.notify({
-        series: this.fieldItemStates
+        series: this.fieldItemStates,
+        allowedFields: this.allowedFields
       });
       this.onUnitsComplete.notify({
         units: this.units
@@ -493,8 +530,7 @@ var indicatorView = function (model, options) {
 
   var chartHeight = screen.height < options.maxChartHeight ? screen.height : options.maxChartHeight;
 
-  $('.plot-container', this._rootElement)
-  .css('height', chartHeight + 'px');
+  $('.plot-container', this._rootElement).css('height', chartHeight + 'px'); 
 
   this._model.onDataComplete.attach(function (sender, args) {
 
@@ -544,19 +580,22 @@ var indicatorView = function (model, options) {
     // end of #246
   });
 
-  this._model.onSelectionUpdate.attach(function(sender, selectedFields) {
-    $(view_obj._rootElement).find('#clear')[selectedFields.length ? 'removeClass' : 'addClass']('disabled');
+  this._model.onSelectionUpdate.attach(function(sender, args) {
+    $(view_obj._rootElement).find('#clear')[args.selectedFields.length ? 'removeClass' : 'addClass']('disabled');
 
     // loop through the available fields:
     $('.variable-selector').each(function(index, element) {
       var currentField = $(element).data('field');
 
       // any info?
-      var match = _.findWhere(selectedFields, { field : currentField });
+      var match = _.findWhere(args.selectedFields, { field : currentField });
       var element = $(view_obj._rootElement).find('.variable-selector[data-field="' + currentField + '"]');
       var width = match ? (Number(match.values.length / element.find('.variable-options label').length) * 100) + '%' : '0';
 
       $(element).find('.bar .selected').css('width', width);
+
+      // is this an allowed field:
+      $(element)[_.contains(args.allowedFields, currentField) ? 'removeClass' : 'addClass']('disallowed');
     });
   });
 
@@ -662,7 +701,8 @@ var indicatorView = function (model, options) {
     $('<button id="clear" class="disabled">Clear selections <i class="fa fa-remove"></i></button>').insertBefore('#fields');
 
     $('#fields').html(template({
-      series: args.series
+        series: args.series,
+        allowedFields: args.allowedFields
     }));
   };
 
@@ -670,7 +710,7 @@ var indicatorView = function (model, options) {
     var template = _.template($('#units_template').html());
 
     $('#units').html(template({
-      units: args.units
+      units: args.units || []
     }));
   };
 

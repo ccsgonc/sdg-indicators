@@ -33,7 +33,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171026142657">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171026215659">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -95,7 +95,7 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector" data-field="<%=seriesItem.field%>">
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
       <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
       <div class="bar">
         <div class="selected"></div>
@@ -112,11 +112,13 @@
     </div>
   <% }); %>
 </script>
-
 <script type="text/template" id="units_template">
-  <% _.each(units, function(unitsItem, index) { %>
-    <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
-  <% }); %>
+  <% if(units.length) { %>
+    <h5>Units type</h5>
+    <% _.each(units, function(unitsItem, index) { %>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+    <% }); %>
+  <% } %>
 </script>
 
 
@@ -147,10 +149,13 @@
    
    
 
+  
+  
+  
    
    
    
-   
+  
   
   <ol class="breadcrumb">
   <li><a href="/sdg-indicators/">Home</a></li>
@@ -160,52 +165,61 @@
   
 </ol>
 
-  <div id="page-content">
-  <p>We are still looking for a suitable data source for this indicator. Please contact us if you think you can help by emailing <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a>.</p>
-
-
-  
-    <hr/>
-  
-  </div>
-
-  <section id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_16-10-1' data-country="UK"
-    data-charttitle="" data-measurementunit=""  data-footnote="" data-datasource="" data-geographicalarea="" data-showdata="false">
-
-    
-    
-    <div class="alert alert-warning" role="alert">
-      <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for sources, definitions, and methodology information
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_16-10-1' data-country="UK"
+  data-edgesdata='[]' data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-showdata="false">
+    <div class="col-md-3">
+      <div id="toolbar">
+        <h5>Sub-categories</h5>
+        <div id="fields"></div>
+      </div>
+      <div id="units"></div>
     </div>
+    <div class="col-md-9">
+      <div id="page-content">
+        <p>We are still looking for a suitable data source for this indicator. Please contact us if you think you can help by emailing <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a>.</p>
 
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist">
-      
-      <li role="presentation" class="nav-item  active">
-        <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
-      </li>
-      <li role="presentation" class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#sources" aria-controls="sources" role="tab">Sources</a>
-      </li>
-      
-        <li role="presentation" class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#edit" aria-controls="edit" role="tab">Edit</a>
-        </li>
-      
-    </ul>
+
+        
+        <hr/>
+        
+      </div>
     
-    <!-- Tab panes -->
-    <div class="tab-content">
-      
-      <div role="tabpanel" class="tab-pane active" id="metadata">
-        <!-- National Metadata -->
-        <div class="collapsible expanded">
-          <h3>National Metadata<span> (Collapse)</span></h3>
-          <article>
-            <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                should be consulted for information on national methodology and other UK-specific metadata information.</p>
-              <table class="table table-hover">
+      <section>
+    
+        
+        
+        <div class="alert alert-warning" role="alert">
+          <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for sources, definitions, and methodology information
+        </div>
+    
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          
+          <li role="presentation" class="nav-item  active">
+            <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#sources" aria-controls="sources" role="tab">Sources</a>
+          </li>
+          
+            <li role="presentation" class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#edit" aria-controls="edit" role="tab">Edit</a>
+            </li>
+          
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content">
+          
+          <div role="tabpanel" class="tab-pane active" id="metadata">
+            <!-- National Metadata -->
+            <div class="collapsible expanded">
+              <h3>National Metadata<span> (Collapse)</span></h3>
+              <article>
+                <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
+                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  <table class="table table-hover">
   
     
   
@@ -478,13 +492,13 @@
   
 </table>
 
-          </article>
-        </div>
-        <!-- Method of Computation -->
-        <div class="collapsible collapsed">
-          <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
-          <article>
-            <table class="table table-hover">
+              </article>
+            </div>
+            <!-- Method of Computation -->
+            <div class="collapsible collapsed">
+              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <article>
+                <table class="table table-hover">
   
     
   
@@ -691,14 +705,14 @@
   
 </table>
 
-          </article>
-        </div>
-        <!-- Global Metadata -->
-        <div class="collapsible collapsed">
-          <h3>Global Metadata<span> (Expand)</span></h3>
-          <article>
-            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-16.pdf">metadata</a> is provided by the UN Statistics Division.</p>
-            <table class="table table-hover">
+              </article>
+            </div>
+            <!-- Global Metadata -->
+            <div class="collapsible collapsed">
+              <h3>Global Metadata<span> (Expand)</span></h3>
+              <article>
+                <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-16.pdf">metadata</a> is provided by the UN Statistics Division.</p>
+                <table class="table table-hover">
   
     
   
@@ -983,27 +997,35 @@
   
 </table>
 
-          </article>
+              </article>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="sources">
+            <!-- Count the non-empty sources (up to 5) -->
+
+
+
+
+
+          </div>
+          
+          <div role="tabpanel" class="tab-pane" id="edit">
+            <div class="edit-container">
+              <a class="btn btn-primary" href="http://prose.io/#datasciencecampus/sdg-indicators/edit/develop/data/indicator_16-10-1.csv">Edit Data</a>
+              <a class="btn btn-primary" href="http://prose.io/#datasciencecampus/sdg-indicators/edit/develop/_indicators/16-10-1.md">Edit Metadata</a>
+            </div>
+          </div>
+          
         </div>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="sources">
-        <!-- Count the non-empty sources (up to 5) -->
-
-
-
-
-
-      </div>
-      
-      <div role="tabpanel" class="tab-pane" id="edit">
-        <div class="edit-container">
-          <a class="btn btn-primary" href="http://prose.io/#datasciencecampus/sdg-indicators/edit/develop/data/indicator_16-10-1.csv">Edit Data</a>
-          <a class="btn btn-primary" href="http://prose.io/#datasciencecampus/sdg-indicators/edit/develop/_indicators/16-10-1.md">Edit Metadata</a>
-        </div>
-      </div>
-      
+      </section>
     </div>
-  </section>
+  </div>
+
+
+
+
+
+  
 </div>
 <footer role="contentinfo">
   <div class="container">
@@ -1041,7 +1063,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20171026142657'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20171026215659'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -1071,16 +1093,19 @@ $(function() {
     });
 
     if($('#indicatorData').length) {
+      var domData = $('#indicatorData').data();
+
       var model = new indicatorModel({
-        data: $('#indicatorData').data('indicatordata'),
-        country: $('#indicatorData').data('country'),
-        indicatorId: $('#indicatorData').data('indicatorid'),
-        chartTitle: $('#indicatorData').data('charttitle'),
-        measurementUnit: $('#indicatorData').data('measurementunit'),
-        dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea'),
-        footnote: $('#indicatorData').data('footnote'),
-        showData: $('#indicatorData').data('showdata')
+        data: domData.indicatordata,
+        country: domData.country,
+        indicatorId: domData.indicatorid,
+        chartTitle: domData.charttitle,
+        edgesData: domData.edgesdata,
+        measurementUnit: domData.measurementunit,
+        dataSource: domData.datasource,
+        geographicalArea: domData.geographicalarea,
+        showData: domData.showdata,
+        footnote: domData.footnote,
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',

@@ -33,7 +33,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171026142657">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171026215659">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -95,7 +95,7 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector" data-field="<%=seriesItem.field%>">
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
       <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
       <div class="bar">
         <div class="selected"></div>
@@ -112,11 +112,13 @@
     </div>
   <% }); %>
 </script>
-
 <script type="text/template" id="units_template">
-  <% _.each(units, function(unitsItem, index) { %>
-    <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
-  <% }); %>
+  <% if(units.length) { %>
+    <h5>Units type</h5>
+    <% _.each(units, function(unitsItem, index) { %>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+    <% }); %>
+  <% } %>
 </script>
 
 
@@ -147,10 +149,13 @@
    
    
 
+  
+  
+  
    
    
    
-   
+  
   
   <ol class="breadcrumb">
   <li><a href="/sdg-indicators/">Home</a></li>
@@ -160,26 +165,30 @@
   
 </ol>
 
-  <div id="page-content">
-  
-
-  
-  </div>
-
-  <section id="indicatorData" data-indicatordata='[{"Year":"2015","Beverage":null,"Value":"10.66"},{"Year":"2014","Beverage":null,"Value":"10.37"},{"Year":"2013","Beverage":null,"Value":"10.32"},{"Year":"2012","Beverage":null,"Value":"10.42"},{"Year":"2011","Beverage":null,"Value":"10.68"},{"Year":"2010","Beverage":null,"Value":"10.88"},{"Year":"2009","Beverage":null,"Value":"10.79"},{"Year":"2008","Beverage":null,"Value":"11.47"},{"Year":"2007","Beverage":null,"Value":"11.84"},{"Year":"2006","Beverage":null,"Value":"11.61"},{"Year":"2005","Beverage":null,"Value":"12.05"},{"Year":"2004","Beverage":null,"Value":"12.22"},{"Year":"2003","Beverage":null,"Value":"11.85"},{"Year":"2002","Beverage":null,"Value":"11.44"},{"Year":"2001","Beverage":null,"Value":"10.91"},{"Year":"2000","Beverage":null,"Value":"10.59"},{"Year":"2015","Beverage":"Beer","Value":"3.49"},{"Year":"2014","Beverage":"Beer","Value":"3.48"},{"Year":"2013","Beverage":"Beer","Value":"3.38"},{"Year":"2012","Beverage":"Beer","Value":"3.46"},{"Year":"2011","Beverage":"Beer","Value":"3.65"},{"Year":"2010","Beverage":"Beer","Value":"3.76"},{"Year":"2009","Beverage":"Beer","Value":"3.84"},{"Year":"2008","Beverage":"Beer","Value":"4.22"},{"Year":"2007","Beverage":"Beer","Value":"4.45"},{"Year":"2006","Beverage":"Beer","Value":"4.7"},{"Year":"2005","Beverage":"Beer","Value":"4.85"},{"Year":"2004","Beverage":"Beer","Value":"5.09"},{"Year":"2003","Beverage":"Beer","Value":"5.16"},{"Year":"2002","Beverage":"Beer","Value":"5.11"},{"Year":"2001","Beverage":"Beer","Value":"5.06"},{"Year":"2000","Beverage":"Beer","Value":"4.98"},{"Year":"2015","Beverage":"Wine","Value":"4.17"},{"Year":"2014","Beverage":"Wine","Value":"4.06"},{"Year":"2013","Beverage":"Wine","Value":"4.03"},{"Year":"2012","Beverage":"Wine","Value":"3.96"},{"Year":"2011","Beverage":"Wine","Value":"3.95"},{"Year":"2010","Beverage":"Wine","Value":"3.96"},{"Year":"2009","Beverage":"Wine","Value":"3.87"},{"Year":"2008","Beverage":"Wine","Value":"4.13"},{"Year":"2007","Beverage":"Wine","Value":"4.24"},{"Year":"2006","Beverage":"Wine","Value":"3.9"},{"Year":"2005","Beverage":"Wine","Value":"4.1"},{"Year":"2004","Beverage":"Wine","Value":"3.98"},{"Year":"2003","Beverage":"Wine","Value":"3.65"},{"Year":"2002","Beverage":"Wine","Value":"3.4"},{"Year":"2001","Beverage":"Wine","Value":"3.22"},{"Year":"2000","Beverage":"Wine","Value":"3.02"},{"Year":"2015","Beverage":"Spirits","Value":"2.27"},{"Year":"2014","Beverage":"Spirits","Value":"2.07"},{"Year":"2013","Beverage":"Spirits","Value":"2.09"},{"Year":"2012","Beverage":"Spirits","Value":"2.16"},{"Year":"2011","Beverage":"Spirits","Value":"2.17"},{"Year":"2010","Beverage":"Spirits","Value":"2.25"},{"Year":"2009","Beverage":"Spirits","Value":"2.16"},{"Year":"2008","Beverage":"Spirits","Value":"2.28"},{"Year":"2007","Beverage":"Spirits","Value":"2.35"},{"Year":"2006","Beverage":"Spirits","Value":"2.25"},{"Year":"2005","Beverage":"Spirits","Value":"2.45"},{"Year":"2004","Beverage":"Spirits","Value":"2.51"},{"Year":"2003","Beverage":"Spirits","Value":"2.45"},{"Year":"2002","Beverage":"Spirits","Value":"2.32"},{"Year":"2001","Beverage":"Spirits","Value":"2.03"},{"Year":"2000","Beverage":"Spirits","Value":"1.96"},{"Year":"2015","Beverage":"Other alcoholic beverages","Value":"0.73"},{"Year":"2014","Beverage":"Other alcoholic beverages","Value":"0.76"},{"Year":"2013","Beverage":"Other alcoholic beverages","Value":"0.83"},{"Year":"2012","Beverage":"Other alcoholic beverages","Value":"0.84"},{"Year":"2011","Beverage":"Other alcoholic beverages","Value":"0.9"},{"Year":"2010","Beverage":"Other alcoholic beverages","Value":"0.91"},{"Year":"2009","Beverage":"Other alcoholic beverages","Value":"0.92"},{"Year":"2008","Beverage":"Other alcoholic beverages","Value":"0.83"},{"Year":"2007","Beverage":"Other alcoholic beverages","Value":"0.8"},{"Year":"2006","Beverage":"Other alcoholic beverages","Value":"0.75"},{"Year":"2005","Beverage":"Other alcoholic beverages","Value":"0.65"},{"Year":"2004","Beverage":"Other alcoholic beverages","Value":"0.62"},{"Year":"2003","Beverage":"Other alcoholic beverages","Value":"0.6"},{"Year":"2002","Beverage":"Other alcoholic beverages","Value":"0.61"},{"Year":"2001","Beverage":"Other alcoholic beverages","Value":"0.61"},{"Year":"2000","Beverage":"Other alcoholic beverages","Value":"0.63"}]' data-indicatorid='indicator_3-5-2' data-country="UK"
-    data-charttitle="Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol" data-measurementunit="Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol"  data-footnote="" data-datasource="World Health Organization (WHO)" data-geographicalarea="United Kingdom" data-showdata="true">
-
-    
-      
-    
-    
-
-    
-    <div id="toolbar">
-      <div id="fields"></div>
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Beverage":null,"Value":"10.66"},{"Year":"2014","Beverage":null,"Value":"10.37"},{"Year":"2013","Beverage":null,"Value":"10.32"},{"Year":"2012","Beverage":null,"Value":"10.42"},{"Year":"2011","Beverage":null,"Value":"10.68"},{"Year":"2010","Beverage":null,"Value":"10.88"},{"Year":"2009","Beverage":null,"Value":"10.79"},{"Year":"2008","Beverage":null,"Value":"11.47"},{"Year":"2007","Beverage":null,"Value":"11.84"},{"Year":"2006","Beverage":null,"Value":"11.61"},{"Year":"2005","Beverage":null,"Value":"12.05"},{"Year":"2004","Beverage":null,"Value":"12.22"},{"Year":"2003","Beverage":null,"Value":"11.85"},{"Year":"2002","Beverage":null,"Value":"11.44"},{"Year":"2001","Beverage":null,"Value":"10.91"},{"Year":"2000","Beverage":null,"Value":"10.59"},{"Year":"2015","Beverage":"Beer","Value":"3.49"},{"Year":"2014","Beverage":"Beer","Value":"3.48"},{"Year":"2013","Beverage":"Beer","Value":"3.38"},{"Year":"2012","Beverage":"Beer","Value":"3.46"},{"Year":"2011","Beverage":"Beer","Value":"3.65"},{"Year":"2010","Beverage":"Beer","Value":"3.76"},{"Year":"2009","Beverage":"Beer","Value":"3.84"},{"Year":"2008","Beverage":"Beer","Value":"4.22"},{"Year":"2007","Beverage":"Beer","Value":"4.45"},{"Year":"2006","Beverage":"Beer","Value":"4.7"},{"Year":"2005","Beverage":"Beer","Value":"4.85"},{"Year":"2004","Beverage":"Beer","Value":"5.09"},{"Year":"2003","Beverage":"Beer","Value":"5.16"},{"Year":"2002","Beverage":"Beer","Value":"5.11"},{"Year":"2001","Beverage":"Beer","Value":"5.06"},{"Year":"2000","Beverage":"Beer","Value":"4.98"},{"Year":"2015","Beverage":"Wine","Value":"4.17"},{"Year":"2014","Beverage":"Wine","Value":"4.06"},{"Year":"2013","Beverage":"Wine","Value":"4.03"},{"Year":"2012","Beverage":"Wine","Value":"3.96"},{"Year":"2011","Beverage":"Wine","Value":"3.95"},{"Year":"2010","Beverage":"Wine","Value":"3.96"},{"Year":"2009","Beverage":"Wine","Value":"3.87"},{"Year":"2008","Beverage":"Wine","Value":"4.13"},{"Year":"2007","Beverage":"Wine","Value":"4.24"},{"Year":"2006","Beverage":"Wine","Value":"3.9"},{"Year":"2005","Beverage":"Wine","Value":"4.1"},{"Year":"2004","Beverage":"Wine","Value":"3.98"},{"Year":"2003","Beverage":"Wine","Value":"3.65"},{"Year":"2002","Beverage":"Wine","Value":"3.4"},{"Year":"2001","Beverage":"Wine","Value":"3.22"},{"Year":"2000","Beverage":"Wine","Value":"3.02"},{"Year":"2015","Beverage":"Spirits","Value":"2.27"},{"Year":"2014","Beverage":"Spirits","Value":"2.07"},{"Year":"2013","Beverage":"Spirits","Value":"2.09"},{"Year":"2012","Beverage":"Spirits","Value":"2.16"},{"Year":"2011","Beverage":"Spirits","Value":"2.17"},{"Year":"2010","Beverage":"Spirits","Value":"2.25"},{"Year":"2009","Beverage":"Spirits","Value":"2.16"},{"Year":"2008","Beverage":"Spirits","Value":"2.28"},{"Year":"2007","Beverage":"Spirits","Value":"2.35"},{"Year":"2006","Beverage":"Spirits","Value":"2.25"},{"Year":"2005","Beverage":"Spirits","Value":"2.45"},{"Year":"2004","Beverage":"Spirits","Value":"2.51"},{"Year":"2003","Beverage":"Spirits","Value":"2.45"},{"Year":"2002","Beverage":"Spirits","Value":"2.32"},{"Year":"2001","Beverage":"Spirits","Value":"2.03"},{"Year":"2000","Beverage":"Spirits","Value":"1.96"},{"Year":"2015","Beverage":"Other alcoholic beverages","Value":"0.73"},{"Year":"2014","Beverage":"Other alcoholic beverages","Value":"0.76"},{"Year":"2013","Beverage":"Other alcoholic beverages","Value":"0.83"},{"Year":"2012","Beverage":"Other alcoholic beverages","Value":"0.84"},{"Year":"2011","Beverage":"Other alcoholic beverages","Value":"0.9"},{"Year":"2010","Beverage":"Other alcoholic beverages","Value":"0.91"},{"Year":"2009","Beverage":"Other alcoholic beverages","Value":"0.92"},{"Year":"2008","Beverage":"Other alcoholic beverages","Value":"0.83"},{"Year":"2007","Beverage":"Other alcoholic beverages","Value":"0.8"},{"Year":"2006","Beverage":"Other alcoholic beverages","Value":"0.75"},{"Year":"2005","Beverage":"Other alcoholic beverages","Value":"0.65"},{"Year":"2004","Beverage":"Other alcoholic beverages","Value":"0.62"},{"Year":"2003","Beverage":"Other alcoholic beverages","Value":"0.6"},{"Year":"2002","Beverage":"Other alcoholic beverages","Value":"0.61"},{"Year":"2001","Beverage":"Other alcoholic beverages","Value":"0.61"},{"Year":"2000","Beverage":"Other alcoholic beverages","Value":"0.63"}]' data-indicatorid='indicator_3-5-2' data-country="UK"
+  data-edgesdata='[]' data-charttitle="Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol" data-measurementunit="Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol" data-datasource="World Health Organization (WHO)" data-geographicalarea="United Kingdom" data-showdata="true">
+    <div class="col-md-3">
+      <div id="toolbar">
+        <h5>Sub-categories</h5>
+        <div id="fields"></div>
+      </div>
+      <div id="units"></div>
     </div>
+    <div class="col-md-9">
+      <div id="page-content">
+        
+
+        
+      </div>
     
-    <div id="units"></div>
+      <section>
+    
+        
+          
+    
+    
+
+    
     <div class="plot-container">
         
 <canvas></canvas>
@@ -187,42 +196,42 @@
     
 
 
+        
+        
+        <div class="alert alert-warning" role="alert">
+          <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for sources, definitions, and methodology information
+        </div>
     
-    
-    <div class="alert alert-warning" role="alert">
-      <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for sources, definitions, and methodology information
-    </div>
-
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist">
-      
-        <li role="presentation" class="nav-item active">
-          <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-        </li>
-      
-      <li role="presentation" class="nav-item  ">
-        <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
-      </li>
-      <li role="presentation" class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#sources" aria-controls="sources" role="tab">Sources</a>
-      </li>
-      
-        <li role="presentation" class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#edit" aria-controls="edit" role="tab">Edit</a>
-        </li>
-      
-    </ul>
-    
-    <!-- Tab panes -->
-    <div class="tab-content">
-      
-        <div role="tabpanel" class="tab-pane active" id="data">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
           
-            <h3>Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol</h3>
+            <li role="presentation" class="nav-item active">
+              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+            </li>
           
-          <p>Unit of Measurement: Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol</p>
-          <a href="/sdg-indicators/data/indicator_3-5-2.csv" class="btn btn-primary btn-download" download='indicator_3-5-2.csv'>Download source CSV</a>
-          <div id="datatables"> 
+          <li role="presentation" class="nav-item  ">
+            <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#sources" aria-controls="sources" role="tab">Sources</a>
+          </li>
+          
+            <li role="presentation" class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#edit" aria-controls="edit" role="tab">Edit</a>
+            </li>
+          
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content">
+          
+            <div role="tabpanel" class="tab-pane active" id="data">
+              
+                <h3>Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol</h3>
+              
+              <p>Unit of Measurement: Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol</p>     
+              <a href="/sdg-indicators/data/indicator_3-5-2.csv" class="btn btn-primary btn-download" download='indicator_3-5-2.csv'>Download source CSV</a>
+              <div id="datatables"> 
  
 
 <h3>Headline data</h3>
@@ -371,18 +380,17 @@
   </tbody>
 </table>
 </div>
-          <p></p>
-        </div>
-      
-      <div role="tabpanel" class="tab-pane " id="metadata">
-        <!-- National Metadata -->
-        <div class="collapsible expanded">
-          <h3>National Metadata<span> (Collapse)</span></h3>
-          <article>
-            <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                should be consulted for information on national methodology and other UK-specific metadata information.</p>
-              <table class="table table-hover">
+            </div>
+          
+          <div role="tabpanel" class="tab-pane " id="metadata">
+            <!-- National Metadata -->
+            <div class="collapsible expanded">
+              <h3>National Metadata<span> (Collapse)</span></h3>
+              <article>
+                <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
+                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  <table class="table table-hover">
   
     
   
@@ -655,13 +663,13 @@
   
 </table>
 
-          </article>
-        </div>
-        <!-- Method of Computation -->
-        <div class="collapsible collapsed">
-          <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
-          <article>
-            <table class="table table-hover">
+              </article>
+            </div>
+            <!-- Method of Computation -->
+            <div class="collapsible collapsed">
+              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <article>
+                <table class="table table-hover">
   
     
   
@@ -868,14 +876,14 @@
   
 </table>
 
-          </article>
-        </div>
-        <!-- Global Metadata -->
-        <div class="collapsible collapsed">
-          <h3>Global Metadata<span> (Expand)</span></h3>
-          <article>
-            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-3.pdf">metadata</a> is provided by the UN Statistics Division.</p>
-            <table class="table table-hover">
+              </article>
+            </div>
+            <!-- Global Metadata -->
+            <div class="collapsible collapsed">
+              <h3>Global Metadata<span> (Expand)</span></h3>
+              <article>
+                <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-3.pdf">metadata</a> is provided by the UN Statistics Division.</p>
+                <table class="table table-hover">
   
     
   
@@ -1160,11 +1168,11 @@
   
 </table>
 
-          </article>
-        </div>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="sources">
-        <!-- Count the non-empty sources (up to 5) -->
+              </article>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="sources">
+            <!-- Count the non-empty sources (up to 5) -->
 
 
 
@@ -1455,17 +1463,25 @@
   </div>
 
 
-      </div>
-      
-      <div role="tabpanel" class="tab-pane" id="edit">
-        <div class="edit-container">
-          <a class="btn btn-primary" href="http://prose.io/#datasciencecampus/sdg-indicators/edit/develop/data/indicator_3-5-2.csv">Edit Data</a>
-          <a class="btn btn-primary" href="http://prose.io/#datasciencecampus/sdg-indicators/edit/develop/_indicators/3-5-2.md">Edit Metadata</a>
+          </div>
+          
+          <div role="tabpanel" class="tab-pane" id="edit">
+            <div class="edit-container">
+              <a class="btn btn-primary" href="http://prose.io/#datasciencecampus/sdg-indicators/edit/develop/data/indicator_3-5-2.csv">Edit Data</a>
+              <a class="btn btn-primary" href="http://prose.io/#datasciencecampus/sdg-indicators/edit/develop/_indicators/3-5-2.md">Edit Metadata</a>
+            </div>
+          </div>
+          
         </div>
-      </div>
-      
+      </section>
     </div>
-  </section>
+  </div>
+
+
+
+
+
+  
 </div>
 <footer role="contentinfo">
   <div class="container">
@@ -1503,7 +1519,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20171026142657'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20171026215659'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -1533,16 +1549,19 @@ $(function() {
     });
 
     if($('#indicatorData').length) {
+      var domData = $('#indicatorData').data();
+
       var model = new indicatorModel({
-        data: $('#indicatorData').data('indicatordata'),
-        country: $('#indicatorData').data('country'),
-        indicatorId: $('#indicatorData').data('indicatorid'),
-        chartTitle: $('#indicatorData').data('charttitle'),
-        measurementUnit: $('#indicatorData').data('measurementunit'),
-        dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea'),
-        footnote: $('#indicatorData').data('footnote'),
-        showData: $('#indicatorData').data('showdata')
+        data: domData.indicatordata,
+        country: domData.country,
+        indicatorId: domData.indicatorid,
+        chartTitle: domData.charttitle,
+        edgesData: domData.edgesdata,
+        measurementUnit: domData.measurementunit,
+        dataSource: domData.datasource,
+        geographicalArea: domData.geographicalarea,
+        showData: domData.showdata,
+        footnote: domData.footnote,
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
