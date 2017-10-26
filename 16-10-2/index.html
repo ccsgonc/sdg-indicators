@@ -33,7 +33,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171026135727">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171026142437">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -170,7 +170,7 @@
   </div>
 
   <section id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_16-10-2' data-country="UK"
-    data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-showdata="false">
+    data-charttitle="" data-measurementunit=""  data-footnote="" data-datasource="" data-geographicalarea="" data-showdata="false">
 
     
     
@@ -474,6 +474,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -602,6 +604,8 @@
         </tr>
         
       
+  
+    
   
     
   
@@ -975,6 +979,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -1035,7 +1041,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20171026135727'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20171026142437'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -1073,6 +1079,7 @@ $(function() {
         measurementUnit: $('#indicatorData').data('measurementunit'),
         dataSource: $('#indicatorData').data('datasource'),
         geographicalArea: $('#indicatorData').data('geographicalarea'),
+        footnote: $('#indicatorData').data('footnote'),
         showData: $('#indicatorData').data('showdata')
       }),
       view  = new indicatorView(model, {

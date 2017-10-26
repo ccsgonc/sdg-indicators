@@ -120,6 +120,7 @@ var indicatorModel = function (options) {
   this.measurementUnit = options.measurementUnit;
   this.dataSource = options.dataSource;
   this.geographicalArea = options.geographicalArea;
+  this.footnote = options.footnote;
   this.showData = options.showData;
   this.selectedFields = [];
   this.selectedUnit = undefined;
@@ -489,11 +490,11 @@ var indicatorView = function (model, options) {
 
   this._chartInstance = undefined;
   this._rootElement = options.rootElement;
-  
+
   var chartHeight = screen.height < options.maxChartHeight ? screen.height : options.maxChartHeight;
 
-  $('.plot-container', this._rootElement) 
-    .css('height', chartHeight + 'px'); 
+  $('.plot-container', this._rootElement)
+  .css('height', chartHeight + 'px');
 
   this._model.onDataComplete.attach(function (sender, args) {
 
@@ -504,7 +505,7 @@ var indicatorView = function (model, options) {
         view_obj.updatePlot(args);
       }
     }
-    
+
     view_obj.createTables(args);
   });
 
@@ -562,7 +563,7 @@ var indicatorView = function (model, options) {
   this._model.onFieldsStatusUpdated.attach(function (sender, args) {
     //console.log('updating field states with: ', args);
 
-    // reset: 
+    // reset:
     $(view_obj._rootElement).find('label').removeClass('selected possible excluded');
 
     _.each(args.data, function(fieldGroup) {
@@ -608,8 +609,8 @@ var indicatorView = function (model, options) {
       };
     })).groupBy('field').map(function(value, key) {
       return {
-          field: key,
-          values: _.pluck(value, 'value')
+        field: key,
+        values: _.pluck(value, 'value')
       };
     }).value(), {
       field: $(this).data('field'),
@@ -628,7 +629,7 @@ var indicatorView = function (model, options) {
 
     e.stopPropagation();
   });
-  
+
   $(this._rootElement).on('click', ':checkbox', function(e) {
 
     // don't permit excluded selections:
@@ -661,7 +662,7 @@ var indicatorView = function (model, options) {
     $('<button id="clear" class="disabled">Clear selections <i class="fa fa-remove"></i></button>').insertBefore('#fields');
 
     $('#fields').html(template({
-        series: args.series
+      series: args.series
     }));
   };
 
@@ -684,7 +685,7 @@ var indicatorView = function (model, options) {
   };
 
   this.createPlot = function (chartInfo) {
-    
+
     var that = this;
 
     this._chartInstance = new Chart($(this._rootElement).find('canvas'), {
@@ -712,7 +713,7 @@ var indicatorView = function (model, options) {
         layout: {
           padding: {
             top: 20,
-            bottom: 55
+            bottom: 70
           }
         },
         legend: {
@@ -739,35 +740,43 @@ var indicatorView = function (model, options) {
       afterDraw: function(chart) {
         var $canvas = $(that._rootElement).find('canvas');
 
-        var textOutputs = [
+        function putTextOutputs(textOutputs, x0, textAlign) {
+          var textRowHeight = 20;
+          var x = x0;
+          var y = $canvas.height() - 10 - ((textOutputs.length - 1) * textRowHeight);
+
+          var canvas = $canvas.get(0);
+          var ctx = canvas.getContext("2d");
+
+          ctx.textAlign = textAlign;
+          ctx.textBaseline = 'middle';
+          ctx.font = '12px Arial';
+          ctx.fillStyle = '#6e6e6e';
+
+          _.each(textOutputs, function(textOutput) {
+            ctx.fillText(textOutput, x, y);
+            y += textRowHeight;
+          });
+        }
+
+        var textOutputsLeft = [
           'Source: ' + (that._model.dataSource ? that._model.dataSource : ''),
           'Geographical Area: ' + (that._model.geographicalArea ? that._model.geographicalArea : ''),
-          'Unit of Measurement: ' + (that._model.measurementUnit ? that._model.measurementUnit : '')
+          'Unit of Measurement: ' + (that._model.measurementUnit ? that._model.measurementUnit : ''),
+          (that._model.footnote ? 'Footnote: ' + that._model.footnote : '')
         ];
+        putTextOutputs(textOutputsLeft, 0, 'left');
 
-        var textRowHeight = 20;
-        var x = 0;
-        var y = $canvas.height() - 40 - (textOutputs.length * textOutputs.length);
-
-        var canvas = $canvas.get(0);
-        var ctx = canvas.getContext("2d");
-
-        ctx.textAlign = 'left';
-        ctx.textBaseline = 'middle';
-        ctx.font = '12px Arial';
-        ctx.fillStyle = '#6e6e6e';
-
-        _.each(textOutputs, function(textOutput) {
-          ctx.fillText(textOutput, x, y);
-          y += textRowHeight;
-        });
-       }
+        //var textOutputsRight = [
+        //];
+        //putTextOutputs(textOutputsRight, $canvas.width(), 'right');
+      }
     });
   };
 
   this.toCsv = function (tableData) {
     var lines = [],
-      headings = tableData.headings;
+    headings = tableData.headings;
 
     lines.push(headings.join(','));
 
@@ -788,22 +797,22 @@ var indicatorView = function (model, options) {
 
     options = options || {};
     var that = this,
-      csv_path = options.csv_path,
-      el = options.element || '#datatables',
-      allow_download = options.allow_download || false,
-      csv_options = options.csv_options || {
-        separator: ',',
-        delimiter: '"'
-      },
-      datatables_options = options.datatables_options || {
-        paging: false,
-        bInfo: false,
-        searching: false/*,
-        scrollX: true,
-        sScrollXInner: '100%',
-        sScrollX: '100%'*/
-      },
-      table_class = options.table_class || 'table table-hover';
+    csv_path = options.csv_path,
+    el = options.element || '#datatables',
+    allow_download = options.allow_download || false,
+    csv_options = options.csv_options || {
+      separator: ',',
+      delimiter: '"'
+    },
+    datatables_options = options.datatables_options || {
+      paging: false,
+      bInfo: false,
+      searching: false/*,
+      scrollX: true,
+      sScrollXInner: '100%',
+      sScrollX: '100%'*/
+    },
+    table_class = options.table_class || 'table table-hover';
 
     // clear:
     $(el).html('');
@@ -841,23 +850,23 @@ var indicatorView = function (model, options) {
         });
 
         if(window.Modernizr && window.Modernizr.blobconstructor) {
-//          $(el).append($('<h5 />').text('Download Headline Data')
-//            .attr({
-//              'class': 'download'
-//            }));
+          //          $(el).append($('<h5 />').text('Download Headline Data')
+          //            .attr({
+          //              'class': 'download'
+          //            }));
           $(el).append($('<a />').text('Download Headline Data')
-            .attr({
-              'href': URL.createObjectURL(new Blob([that.toCsv(tableData)], {
-                type: 'text/csv'
-              })),
-              'download': chartInfo.indicatorId + tableData.title + '.csv',
-              'title': 'Download as CSV',
-              'class': 'btn btn-primary btn-download'
-            })
-            .data('csvdata', that.toCsv(tableData)));
+          .attr({
+            'href': URL.createObjectURL(new Blob([that.toCsv(tableData)], {
+              type: 'text/csv'
+            })),
+            'download': chartInfo.indicatorId + tableData.title + '.csv',
+            'title': 'Download as CSV',
+            'class': 'btn btn-primary btn-download'
+          })
+          .data('csvdata', that.toCsv(tableData)));
         }
 
-		  $(el).append(currentTable);
+        $(el).append(currentTable);
 
         // equal width columns:
         datatables_options.aoColumns = _.map(tableData.headings, function (h) {

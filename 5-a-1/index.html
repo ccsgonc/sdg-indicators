@@ -33,7 +33,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171026135727">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171026142437">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -167,7 +167,7 @@
   </div>
 
   <section id="indicatorData" data-indicatordata='[{"Year":"2017","Occupation Category":null,"Value":"27.16659634"},{"Year":"2017","Occupation Category":"Managers and proprietors in agriculture and horticulture","Value":"20.33297408"},{"Year":"2017","Occupation Category":"Managers and proprietors in forestry, fishing and related services","Value":"43.77283066"},{"Year":"2016","Occupation Category":null,"Value":"40.38863643"},{"Year":"2016","Occupation Category":"Managers and proprietors in agriculture and horticulture","Value":"23.43346109"},{"Year":"2016","Occupation Category":"Managers and proprietors in forestry, fishing and related services","Value":"68.71416871"},{"Year":"2015","Occupation Category":null,"Value":"27.3813436"},{"Year":"2015","Occupation Category":"Managers and proprietors in agriculture and horticulture","Value":"15.22340546"},{"Year":"2015","Occupation Category":"Managers and proprietors in forestry, fishing and related services","Value":"47.16620413"},{"Year":"2014","Occupation Category":null,"Value":"27.25996842"},{"Year":"2014","Occupation Category":"Managers and proprietors in agriculture and horticulture","Value":"21.3182158"},{"Year":"2014","Occupation Category":"Managers and proprietors in forestry, fishing and related services","Value":"51.72502244"},{"Year":"2013","Occupation Category":null,"Value":"53.10836564"},{"Year":"2013","Occupation Category":"Managers and proprietors in agriculture and horticulture","Value":"36.74530411"},{"Year":"2013","Occupation Category":"Managers and proprietors in forestry, fishing and related services","Value":"76.43870556"},{"Year":"2012","Occupation Category":null,"Value":"26.59864966"},{"Year":"2012","Occupation Category":"Managers and proprietors in agriculture and horticulture","Value":"24.02608772"},{"Year":"2012","Occupation Category":"Managers and proprietors in forestry, fishing and related services","Value":"32.20727169"}]' data-indicatorid='indicator_5-a-1' data-country="UK"
-    data-charttitle="Percentage of managers and proprietors in Agriculture Related Services who are women" data-measurementunit="Percentage" data-datasource="ONS" data-geographicalarea="United Kingdom" data-showdata="true">
+    data-charttitle="Percentage of managers and proprietors in Agriculture Related Services who are women" data-measurementunit="Percentage"  data-footnote="" data-datasource="ONS" data-geographicalarea="United Kingdom" data-showdata="true">
 
     
       
@@ -220,7 +220,7 @@
           
             <h3>Percentage of managers and proprietors in Agriculture Related Services who are women</h3>
           
-          <p>Unit of Measurement: Percentage</p>     
+          <p>Unit of Measurement: Percentage</p>
           <a href="/sdg-indicators/data/indicator_5-a-1.csv" class="btn btn-primary btn-download" download='indicator_5-a-1.csv'>Download source CSV</a>
           <div id="datatables"> 
  
@@ -291,6 +291,7 @@
   </tbody>
 </table>
 </div>
+          <p></p>
         </div>
       
       <div role="tabpanel" class="tab-pane " id="metadata">
@@ -477,6 +478,8 @@
         </tr>
         
       
+  
+    
   
     
   
@@ -781,6 +784,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -956,6 +961,8 @@
     
       
       
+  
+    
   
     
   
@@ -1359,6 +1366,8 @@
   
     
   
+    
+  
 </table>
 
     </div>
@@ -1414,7 +1423,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20171026135727'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20171026142437'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -1452,6 +1461,7 @@ $(function() {
         measurementUnit: $('#indicatorData').data('measurementunit'),
         dataSource: $('#indicatorData').data('datasource'),
         geographicalArea: $('#indicatorData').data('geographicalarea'),
+        footnote: $('#indicatorData').data('footnote'),
         showData: $('#indicatorData').data('showdata')
       }),
       view  = new indicatorView(model, {
