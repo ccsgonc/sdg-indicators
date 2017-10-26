@@ -130,9 +130,11 @@ header {
 
 .navbar-brand {
   display: block;
-  padding-right: 0;
+  padding: 1.1em 0;
+	height: auto;
   img {
-    width: 300px;
+		width: 100%;
+    max-width: 300px;
   }
 }
 
