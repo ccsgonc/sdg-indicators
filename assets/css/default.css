@@ -822,3 +822,24 @@ footer {
 #page-content thead {
   padding-bottom: 10px;
   border-bottom: 1pt solid #E5E6E7; }
+
+.no-js #indicatorData > .col-md-3 {
+  display: none; }
+.no-js #indicatorData > .col-md-9 {
+  width: 100%; }
+.no-js .plot-container {
+  display: none; }
+.no-js .tab-pane {
+  display: block !important; }
+.no-js #main-content .collapsible {
+  border: 0; }
+  .no-js #main-content .collapsible:first-child {
+    border: none; }
+  .no-js #main-content .collapsible article {
+    display: block;
+    padding: 8px 0; }
+  .no-js #main-content .collapsible h3 {
+    padding: 0;
+    cursor: default; }
+  .no-js #main-content .collapsible h3 span {
+    display: none; }
