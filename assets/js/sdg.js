@@ -508,7 +508,8 @@ var indicatorModel = function (options) {
 
       this.onSeriesComplete.notify({
         series: this.fieldItemStates,
-        allowedFields: this.allowedFields
+        allowedFields: this.allowedFields,
+        edges: this.edgesData
       });
       this.onUnitsComplete.notify({
         units: this.units
@@ -644,7 +645,11 @@ var indicatorView = function (model, options) {
   });
 
   $(this._rootElement).on('click', '#fields label', function (e) {
-    $(this).find(':checkbox').trigger('click');
+
+    if(!$(this).closest('.variable-options').hasClass('disallowed')) {
+      $(this).find(':checkbox').trigger('click');      
+    }
+
     e.preventDefault();
     e.stopPropagation();
   });
@@ -686,10 +691,10 @@ var indicatorView = function (model, options) {
   $(this._rootElement).on('click', ':checkbox', function(e) {
 
     // don't permit excluded selections:
-    if($(this).parent().hasClass('excluded')) {
+    if($(this).parent().hasClass('excluded') || $(this).closest('.variable-selector').hasClass('disallowed')) {
       return;
     }
-
+    
     updateWithSelectedFields();
 
     e.stopPropagation();
@@ -717,7 +722,8 @@ var indicatorView = function (model, options) {
     
         $('#fields').html(template({
             series: args.series,
-            allowedFields: args.allowedFields
+            allowedFields: args.allowedFields,
+            edges: args.edges
         }));
     } else {
       $(this._rootElement).addClass('no-series');

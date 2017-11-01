@@ -581,10 +581,13 @@ h5 + .btn-download {
       display: inline-block;
       margin-right: 8px;
       margin-bottom: 10px; }
-      #main-content #fields .variable-selector.disallowed {
-        display: none; }
       #main-content #fields .variable-selector:hover {
         border-color: #555; }
+      #main-content #fields .variable-selector .variable-hint {
+        display: none;
+        padding-left: 7px;
+        margin-top: -7px;
+        color: #666; }
       #main-content #fields .variable-selector .variable-options {
         background-color: white;
         display: none;
@@ -625,6 +628,23 @@ h5 + .btn-download {
             right: 4px; }
           #main-content #fields .variable-selector .variable-options label:hover {
             background: #f5f3f3; }
+      #main-content #fields .variable-selector.child {
+        margin-left: 20px;
+        width: calc(100% - 20px); }
+      #main-content #fields .variable-selector.disallowed {
+        padding-bottom: 5px; }
+        #main-content #fields .variable-selector.disallowed .bar {
+          display: none; }
+        #main-content #fields .variable-selector.disallowed .variable-hint {
+          display: block; }
+        #main-content #fields .variable-selector.disallowed .variable-options > div {
+          display: none; }
+        #main-content #fields .variable-selector.disallowed .variable-options input {
+          display: none; }
+        #main-content #fields .variable-selector.disallowed .variable-options label {
+          cursor: default; }
+          #main-content #fields .variable-selector.disallowed .variable-options label:hover {
+            background: white; }
   #main-content #units {
     clear: left; }
     #main-content #units label {
