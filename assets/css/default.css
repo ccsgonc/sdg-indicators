@@ -421,21 +421,23 @@ h5 + .btn-download {
   display: block; }
   .heading a:hover {
     text-decoration: none; }
+.heading h1,
 .heading h2,
 .heading h3 {
   color: white; }
-.heading h2 {
-  margin-top: 12px; }
+.heading h1 {
+  margin-top: 12px;
+  font-size: 2.2em; }
   @media only screen and (max-width: 480px) {
-    .heading h2 {
+    .heading h1 {
       font-size: 0.938em; } }
 @media only screen and (max-width: 480px) {
   .heading h3 {
     font-size: 0.813em; } }
-.heading.indicator h2 {
+.heading.indicator h1 {
   font-size: 24px; }
   @media only screen and (max-width: 480px) {
-    .heading.indicator h2 {
+    .heading.indicator h1 {
       font-size: 0.813em; } }
 .heading.indicator h3 {
   font-size: 30px; }
@@ -547,11 +549,11 @@ h5 + .btn-download {
         color: white; }
         #main-content #fields label.excluded input {
           display: none; }
-    #main-content #fields h5 {
+    #main-content #fields h4 {
       padding-left: 7px;
       position: relative;
       padding-right: 33px; }
-      #main-content #fields h5 i {
+      #main-content #fields h4 i {
         font-size: 0.875em;
         position: absolute;
         top: 0;
@@ -747,6 +749,8 @@ h5 + .btn-download {
     margin-bottom: 4px;
     padding-bottom: 4px;
     border-bottom: 1px solid #ccc; }
+    #main-content .goal h2 {
+      font-size: 1.6em; }
   #main-content .frame {
     width: 115px;
     float: left;
