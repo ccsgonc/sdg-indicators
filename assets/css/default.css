@@ -588,7 +588,6 @@ h5 + .btn-download {
       #main-content #fields .variable-selector .variable-hint {
         display: none;
         padding-left: 7px;
-        margin-top: -7px;
         color: #666; }
       #main-content #fields .variable-selector .variable-options {
         background-color: white;
@@ -657,6 +656,16 @@ h5 + .btn-download {
       margin-right: 8px;
       cursor: pointer;
       width: 100%; }
+  #main-content #dataset-size-warning {
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    vertical-align: middle;
+    background: #FFCC0B;
+    border-radius: 4px;
+    padding: 5px; }
+    #main-content #dataset-size-warning i {
+      font-size: 1.2em; }
   #main-content .plot-container {
     margin-bottom: 4.5rem;
     padding: 10px; }
