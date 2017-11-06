@@ -514,6 +514,9 @@ h5 + .btn-download {
     #main-content #toolbar button.disabled {
       color: #777;
       background: #ccc; }
+  #main-content #toolbar .accessBtn {
+    padding: 0px !important;
+    border: none; }
   #main-content #fields {
     user-select: none;
     -moz-user-select: none;
@@ -880,6 +883,9 @@ footer {
     cursor: default; }
   .no-js #main-content .collapsible h3 span {
     display: none; }
+
+.roleHeader {
+  cursor: pointer; }
 
 .visuallyhidden {
   position: absolute;
