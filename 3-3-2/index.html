@@ -38,7 +38,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171106220226">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171107081956">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -181,9 +181,10 @@
   <div class="row" id="page-content-row">
     <div class="col-md-12">
       <div id="page-content">
-          <p>We have not explored suitable data sources for this indicator.</p>
+          <p>Data follows the UN specification for this indicator and has been indentified in collaboration with topic experts.</p>
 
 <p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
 
           
           <hr/>
@@ -192,13 +193,38 @@
     </div>
   </div>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_3-3-2' data-country=""
-  data-edgesdata='[]' data-charttitle="Tuberculosis incidence per 1,000 UK population" data-measurementunit="" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="false">
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_3-3-2' data-country="United Kingdom"
+  data-edgesdata='[]' data-charttitle="Tuberculosis incidence per 1,000 UK population" data-measurementunit="Rate per 100,000 population" data-datasource="Public Health England (PHE)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
   
-    <div class="col-md-12">
+    <div class="col-md-3">
+      <div id="toolbar">
+        <h3>Sub-categories</h3>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        <div id="fields"></div>
+      </div>
+      <div id="units"></div>
+    </div>
+    <div class="col-md-9">
   
       <section>
     
+        
+          
+    
+    
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
+
+    
+    <div class="plot-container">
+        
+<canvas></canvas>
+    </div>
+    
+
+
         
         
         <div class="alert alert-warning" role="alert">
@@ -208,7 +234,11 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           
-          <li role="presentation" class="nav-item  active">
+            <li role="presentation" class="nav-item active">
+              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+            </li>
+          
+          <li role="presentation" class="nav-item  ">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -224,7 +254,57 @@
         <!-- Tab panes -->
         <div class="tab-content">
           
-          <div role="tabpanel" class="tab-pane active" id="metadata">
+            <div role="tabpanel" class="tab-pane active" id="data">
+              
+                <h3>Tuberculosis incidence per 1,000 UK population</h3>
+                
+              <a href="/sdg-indicators/data/indicator_3-3-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_3-3-2.csv' tabindex='0' role='button'>Download source CSV</a>
+              <div id="datatables"> 
+ 
+
+<a href='/sdg-indicators/data/headlines/headlines_3-3-2.csv' class='btn btn-primary btn-download' download='indicator_3-3-2.csv' tabindex='0' role='button'>Download headline CSV</a>
+
+<h3>Headline data</h3>
+
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
+  <!-- <caption>Headline data</caption> -->
+  <thead>
+  
+      <th scope="col">Year</th>
+  
+      <th scope="col">Value</th>
+  
+  </thead>
+  <tbody>
+  
+      <tr>
+      
+          <td>2015</td>
+      
+          <td>2</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2016</td>
+      
+          <td>2</td>
+      
+      </tr>
+  
+  </tbody>
+</table>
+</div>
+              <div id="datatableFooter">
+                <p>Source: Public Health England (PHE)</p>
+                <p>Geographical Area: United Kingdom</p>
+                <p>Units of Measure: Rate per 100,000 population</p>
+                <p></p>
+              </div>
+            </div>
+          
+          <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
             <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
@@ -272,7 +352,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            
+            Number of Tuberculosis case notifications per 100,000 population
           
         </td>
         </tr>
@@ -298,7 +378,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            
+            Annual 
           
         </td>
         </tr>
@@ -311,7 +391,7 @@
         <th scope="row">Earliest Available Data </th>
         <td>
           
-            
+            2000
           
         </td>
         </tr>
@@ -324,7 +404,7 @@
         <th scope="row">Geographic Coverage </th>
         <td>
           
-            
+            United Kingdom
           
         </td>
         </tr>
@@ -573,7 +653,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            
+            Rate per 100,000 population
           
         </td>
         </tr>
@@ -819,7 +899,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            WHO
+            World Health Organization (WHO)
           
         </td>
         </tr>
@@ -877,8 +957,8 @@
             
 
             
-              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-3.pdf" target="_blank">
-                United Nations Sustainable Development Goals Metadata (pdf 865kB) <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-03-03-02.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata: 3.3.2 (pdf 61kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1100,7 +1180,7 @@
         <th scope="row">Organisation </th>
         <td>
           
-            
+            Public Health England (PHE)
           
         </td>
         </tr>
@@ -1113,7 +1193,7 @@
         <th scope="row">Periodicity </th>
         <td>
           
-            
+            Annual 
           
         </td>
         </tr>
@@ -1157,6 +1237,10 @@
             
             
 
+            
+              <a href="https://www.gov.uk/government/statistics/reports-of-cases-of-tb-to-uk-enhanced-tuberculosis-surveillance-systems" target="_blank">
+                Reports of cases of TB to UK enhanced tuberculosis surveillance systems <span class="visuallyhidden">opens in a new window</span>
+              </a>
             
             
           
@@ -1357,7 +1441,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20171106220226'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20171107081956'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
