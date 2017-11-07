@@ -37,10 +37,12 @@ header {
   max-width: 250px; }
 .results p {
   border-bottom: 1px solid #cdcdcd;
+  padding: 4px 0;
   padding: 4px 0; }
-.results h4 {
+.results h2 {
+  font-size: 2rem;
   margin-bottom: 1.5rem;
-  margin-top: 1rem; }
+  margin-top: 1.5rem !important; }
 
 .breadcrumb {
   margin-bottom: 15px; }
@@ -731,6 +733,8 @@ h5 + .btn-download {
       width: 35%; }
     #main-content .tab-content .tab-pane #datatable {
       overflow-x: auto; }
+  #main-content .tab-content h4 {
+    margin-top: 2rem !important; }
   #main-content .statuses strong {
     font-weight: normal; }
   #main-content .statuses > div {
