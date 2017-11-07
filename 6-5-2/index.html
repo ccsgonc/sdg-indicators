@@ -38,7 +38,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171107081956">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171107084216">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -181,7 +181,10 @@
   <div class="row" id="page-content-row">
     <div class="col-md-12">
       <div id="page-content">
-          <p>We have found a suitable source of data for this indicator or relevant proxy at national level. We are currently quality assuring the data and preparing it for publication.</p>
+          <p>Data follows the UN specification for this indicator and has been indentified in collaboration with topic experts.</p>
+
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
 
           
           <hr/>
@@ -190,13 +193,38 @@
     </div>
   </div>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_6-5-2' data-country=""
-  data-edgesdata='[]' data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="false">
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_6-5-2' data-country="United Kingdom"
+  data-edgesdata='[]' data-charttitle="" data-measurementunit="Area (km2) or Percentage (%)" data-datasource="" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
   
-    <div class="col-md-12">
+    <div class="col-md-3">
+      <div id="toolbar">
+        <h3>Sub-categories</h3>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        <div id="fields"></div>
+      </div>
+      <div id="units"></div>
+    </div>
+    <div class="col-md-9">
   
       <section>
     
+        
+          
+    
+    
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
+
+    
+    <div class="plot-container">
+        
+<canvas></canvas>
+    </div>
+    
+
+
         
         
         <div class="alert alert-warning" role="alert">
@@ -206,7 +234,11 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           
-          <li role="presentation" class="nav-item  active">
+            <li role="presentation" class="nav-item active">
+              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+            </li>
+          
+          <li role="presentation" class="nav-item  ">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -222,7 +254,55 @@
         <!-- Tab panes -->
         <div class="tab-content">
           
-          <div role="tabpanel" class="tab-pane active" id="metadata">
+            <div role="tabpanel" class="tab-pane active" id="data">
+                
+              <a href="/sdg-indicators/data/indicator_6-5-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_6-5-2.csv' tabindex='0' role='button'>Download source CSV</a>
+              <div id="datatables"> 
+ 
+
+<a href='/sdg-indicators/data/headlines/headlines_6-5-2.csv' class='btn btn-primary btn-download' download='indicator_6-5-2.csv' tabindex='0' role='button'>Download headline CSV</a>
+
+<h3>Headline data</h3>
+
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
+  <!-- <caption>Headline data</caption> -->
+  <thead>
+  
+      <th scope="col">Year</th>
+  
+      <th scope="col">Value</th>
+  
+  </thead>
+  <tbody>
+  
+      <tr>
+      
+          <td>2015</td>
+      
+          <td>2</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2016</td>
+      
+          <td>2</td>
+      
+      </tr>
+  
+  </tbody>
+</table>
+</div>
+              <div id="datatableFooter">
+                <p>Source: </p>
+                <p>Geographical Area: United Kingdom</p>
+                <p>Units of Measure: Area (km2) or Percentage (%)</p>
+                <p></p>
+              </div>
+            </div>
+          
+          <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
             <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
@@ -270,7 +350,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            
+            Surface area of the transboundry basin and percentage of the basin area with an operational arrangement for water cooperation
           
         </td>
         </tr>
@@ -309,7 +389,7 @@
         <th scope="row">Earliest Available Data </th>
         <td>
           
-            
+            2016
           
         </td>
         </tr>
@@ -322,7 +402,7 @@
         <th scope="row">Geographic Coverage </th>
         <td>
           
-            
+            United Kingdom
           
         </td>
         </tr>
@@ -571,7 +651,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            
+            Area (km2) or Percentage (%)
           
         </td>
         </tr>
@@ -817,7 +897,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            United Nations Education and Scientific Cultural Organisation - Institute for Statistics (UNESCO-UIS), United Nations Economic Commission for Europe (UNECE)
+            United Nations Education and Scientific Cultural Organisation - Institute for Statistics (UNESCO-UIS) and United Nations Economic Commission for Europe (UNECE)
           
         </td>
         </tr>
@@ -876,7 +956,7 @@
 
             
               <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-6.pdf" target="_blank">
-                United Nations Sustainable Development Goals Metadata (pdf 428kB) <span class="visuallyhidden">opens in a new window</span>
+                United Nations Sustainable Development Goals Metadata: Goal 6 (pdf 428kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1017,287 +1097,6 @@
 
 
 
-  <h3>UK Data Source Metadata</h3>
-  <div class="row no-gutters">
-  
-   
-    
-    <div class="col-md-6">
-      <h4>Source 1</h4>
-      <table class="table table-hover">
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      
-      <tr>
-        <th scope="row">Organisation </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Periodicity </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Earliest Available Data </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Geographical Coverage </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Link to Data Source </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Release Date </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Next Release </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Statistical Classification </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Contact Details </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Other Information </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-</table>
-
-    </div>
-    
-  </div>
-
 
           </div>
           
@@ -1355,7 +1154,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20171107081956'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20171107084216'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
