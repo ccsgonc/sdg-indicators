@@ -43,7 +43,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171107085905">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20171107090403">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -186,7 +186,10 @@
   <div class="row" id="page-content-row">
     <div class="col-md-12">
       <div id="page-content">
-          <p>We have found a suitable source of data for this indicator or relevant proxy at national level. We are currently quality assuring the data and preparing it for publication.</p>
+          <p>Data for this indicator has been sourced from the UN SDG database. As with all indicators, this will be reviewed.</p>
+
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
 
           
           <hr/>
@@ -195,13 +198,38 @@
     </div>
   </div>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_7-1-2' data-country=""
-  data-edgesdata='[]' data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="false">
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_7-1-2' data-country="United Kingdom"
+  data-edgesdata='[]' data-charttitle="Percentage of the population with access to clean fuels and technologies for cooking" data-measurementunit="Percentage (%)" data-datasource="World Bank" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
   
-    <div class="col-md-12">
+    <div class="col-md-3">
+      <div id="toolbar">
+        <h3>Sub-categories</h3>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        <div id="fields"></div>
+      </div>
+      <div id="units"></div>
+    </div>
+    <div class="col-md-9">
   
       <section>
     
+        
+          
+    
+    
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
+
+    
+    <div class="plot-container">
+        
+<canvas></canvas>
+    </div>
+    
+
+
         
         
         <div class="alert alert-warning" role="alert">
@@ -211,7 +239,11 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           
-          <li role="presentation" class="nav-item  active">
+            <li role="presentation" class="nav-item active">
+              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+            </li>
+          
+          <li role="presentation" class="nav-item  ">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -227,7 +259,57 @@
         <!-- Tab panes -->
         <div class="tab-content">
           
-          <div role="tabpanel" class="tab-pane active" id="metadata">
+            <div role="tabpanel" class="tab-pane active" id="data">
+              
+                <h3>Percentage of the population with access to clean fuels and technologies for cooking</h3>
+                
+              <a href="/sdg-indicators/data/indicator_7-1-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_7-1-2.csv' tabindex='0' role='button'>Download source CSV</a>
+              <div id="datatables"> 
+ 
+
+<a href='/sdg-indicators/data/headlines/headlines_7-1-2.csv' class='btn btn-primary btn-download' download='indicator_7-1-2.csv' tabindex='0' role='button'>Download headline CSV</a>
+
+<h3>Headline data</h3>
+
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
+  <!-- <caption>Headline data</caption> -->
+  <thead>
+  
+      <th scope="col">Year</th>
+  
+      <th scope="col">Value</th>
+  
+  </thead>
+  <tbody>
+  
+      <tr>
+      
+          <td>2015</td>
+      
+          <td>2</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2016</td>
+      
+          <td>2</td>
+      
+      </tr>
+  
+  </tbody>
+</table>
+</div>
+              <div id="datatableFooter">
+                <p>Source: World Bank</p>
+                <p>Geographical Area: United Kingdom</p>
+                <p>Units of Measure: Percentage (%)</p>
+                <p></p>
+              </div>
+            </div>
+          
+          <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
             <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
@@ -275,7 +357,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            
+            Percentage of the population with access to clean fuels and technologies for cooking
           
         </td>
         </tr>
@@ -301,7 +383,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            
+            Annual
           
         </td>
         </tr>
@@ -327,7 +409,7 @@
         <th scope="row">Geographic Coverage </th>
         <td>
           
-            
+            United Kingdom
           
         </td>
         </tr>
@@ -576,7 +658,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            
+            Percentage (%)
           
         </td>
         </tr>
@@ -589,7 +671,7 @@
         <th scope="row">Calculations </th>
         <td>
           
-            
+            Countries classified as high-income with a Gross National Income (GNI) of more than US$ 12,746 - per capita are assumed to have made a complete transition to using clean fuels and technologies as the primary domestic energy source for cooking and the primary reliance on polluting (unclean) fuels and technologies use is reported to be less than 5% and assumed as zero for regional and global estimates.
           
         </td>
         </tr>
@@ -822,7 +904,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            WHO
+            World Health Organization (WHO)
           
         </td>
         </tr>
@@ -880,8 +962,8 @@
             
 
             
-              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-7.pdf" target="_blank">
-                United Nations Sustainable Development Goals Metadata (pdf 110kB) <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-07-01-02.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata: 7.1.2 (pdf 231kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1103,7 +1185,7 @@
         <th scope="row">Organisation </th>
         <td>
           
-            
+            World Bank
           
         </td>
         </tr>
@@ -1160,6 +1242,10 @@
             
             
 
+            
+              <a href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS" target="_blank">
+                Access to clean fuels and technologies for cooking (% of population) <span class="visuallyhidden">opens in a new window</span>
+              </a>
             
             
           
@@ -1360,7 +1446,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20171107085905'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20171107090403'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
