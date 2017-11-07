@@ -552,11 +552,11 @@ h5 + .btn-download {
         color: white; }
         #main-content #fields label.excluded input {
           display: none; }
-    #main-content #fields h4 {
+    #main-content #fields h5 {
       padding-left: 7px;
       position: relative;
       padding-right: 33px; }
-      #main-content #fields h4 i {
+      #main-content #fields h5 i {
         font-size: 0.875em;
         position: absolute;
         top: 0;
