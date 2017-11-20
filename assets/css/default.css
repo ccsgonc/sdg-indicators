@@ -762,6 +762,15 @@ h5 + .btn-download {
       overflow-x: auto; }
   #main-content .tab-content h4 {
     margin-top: 2rem !important; }
+  #main-content #selectionsTable {
+    padding-bottom: 20px; }
+    #main-content #selectionsTable div.dataTables_wrapper {
+      overflow-x: auto; }
+      #main-content #selectionsTable div.dataTables_wrapper .row {
+        margin-left: 0;
+        margin-right: 0; }
+    #main-content #selectionsTable table th, #main-content #selectionsTable table td {
+      white-space: nowrap; }
   #main-content .statuses strong {
     font-weight: normal; }
   #main-content .statuses > div {
@@ -845,7 +854,7 @@ h5 + .btn-download {
     color: inherit;
     padding: 0; }
   #main-content h2:first-child {
-    margin-top: 0; }
+    margin-bottom: 14px; }
 
 footer {
   clear: left;
@@ -910,6 +919,8 @@ footer {
   display: none; }
 .no-js #indicatorData > .col-md-9 {
   width: 100%; }
+.no-js .data-view {
+  display: none; }
 .no-js .plot-container {
   display: none; }
 .no-js .tab-pane {
