@@ -1114,7 +1114,7 @@ var indicatorView = function (model, options) {
     // clear:
     $(el).html('');
 
-    if(table.data.length) {
+    if(table && table.data.length) {
       var currentTable = $('<table />').attr({
         'class': /*'table-responsive ' +*/ table_class,
         'width': '100%'
