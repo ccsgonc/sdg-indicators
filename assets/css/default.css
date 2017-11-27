@@ -134,6 +134,9 @@ header {
       .navbar #search input:focus {
         width: 350px; }
 
+.table .table-value {
+  text-align: right; }
+
 @media only screen and (max-width: 768px) {
   header .container {
     padding-left: 0;
@@ -502,12 +505,6 @@ h5 + .btn-download {
     #main-content .collapsible article {
       display: none;
       padding: 8px 12px; }
-    #main-content .collapsible.collapsed span {
-      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAOCAYAAAArMezNAAAB5ElEQVQ4jZWTS2vCUBBGz43VFixFkmLxgaDbbsRgkP58oaiYrNy4UpSCiY9WbUWNmummhoqxj1l+c++Zj3koEQFgu92KiHB9fY1SSvGPCIJAttstsViMRCKhADSA1WolnU6HVqvFfD7/DxMREc/zaDQadLtdfN8XgKuPjw/pdDr0ej1832e9XmNZlui6/ifXnudh2zbT6RTP8zgcDjw+Poq22+2YTCb4vg/AaDSi0Wgwm83kN6jruvL8/Mx0OgVgs9ngeR4AWiqVolwuc3d3F34Yj8c0m80f4a7rSr1eZ7lchpqu61SrVeLxOJpSShUKBVWpVEgmkyfwdrvN29ubyHHCXz0dj8fSbDZZrVZnUMMwlFJKacdEsVhUpmmewEejEbZthwMNgkBc1z0WDN8ZhkG1WiWbzYZzUd/MANDv98VxHN7f30Mtl8thWRbr9RrHcZhMJmdOv0MjwQDD4VBs22axWIRaOp1mv9/z+vp64rRWq5FOp882KBIcBIG8vLzgOM7Fvb6/v+fp6QnDMCLXUosUNU3l83lM0+T29vYsn0qlsCwLXdcji14EH+GFQuFsoIZhYFkWDw8P6qfTv7pY8itKpZISEXEch5ubG0zTJJfL/XqVkT2OisFgIIlEgkwm86dT/wQLtP1TTuwWxwAAAABJRU5ErkJggg=="); }
-    #main-content .collapsible.expanded article {
-      display: block; }
-    #main-content .collapsible.expanded span {
-      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAOCAYAAAArMezNAAAB10lEQVQ4jY2TS4vqQBCFTwWfBMWMJkYQRF1lqwYUwX/vJg8RV+4E0QhBY/ABGh91F3NtdEZHa9fVxddVp04TM+OTWCwWHEURKpUKfVIf+6RoPp+z67o4HA44n89cr9ffwt+Cb9DVagUAcF0XRMS1Wu1P+EswM7Pv+7AsC2EYivx+v4fruojFYlwulyFJ0tMHpFfgIAh+QW+x2+3gui5msxmu1+vTJT0F+77P/X4fy+VS5L6+vqBpmjiHYQjHcTCbzZ42Rj9d4Xke27aNIAhETlVVNJtNpNNpWJaF+Xwu7jKZDJrNJqrV6oMkDxp7nseO4zxANU1Do9FAsViEJElkmiYTkeh0u93Ctm1cr9cHt0j3UNu2xfYBQFEUmKYJXdfFknK5HFqtFkqlkqi7LXQymYjxJWbm1Wr1a3xZltFut6FpGhGR6ISISFEUMk3zQfP9fo/BYIDpdMrMzNLpdMJPaDabRa/Xg67rL72az+fp/8Mit9lsMBwOEYbhtxTFYhGpVAoAUCgU0O12/4TewzudjpAlkUhAVVXE4/FvV0RRxOPxGMvlEoZhQNd13I//LtbrNY9GI8iyDMMwIMsyCbtFUcSXywXJZPLlb3oVzMzH4xFEhGQySQDwD7dp8T14Um6/AAAAAElFTkSuQmCC"); }
   #main-content h4 {
     margin-bottom: 1.5rem; }
   #main-content #indicatorData.no-series > .col-md-3 {
@@ -950,3 +947,107 @@ footer {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0; }
+
+#accessibility-nav {
+  display: flex;
+  position: relative;
+  padding-top: 10px; }
+  #accessibility-nav li {
+    display: inline-block;
+    list-style: none; }
+    #accessibility-nav li.contrast {
+      font-size: 1.3em;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 25px;
+      max-height: 25px;
+      text-align: center;
+      margin: auto 1.3em auto 0; }
+      #accessibility-nav li.contrast a {
+        margin: auto;
+        text-decoration: none; }
+    #accessibility-nav li.contrast-default {
+      background: white; }
+      #accessibility-nav li.contrast-default a {
+        color: black; }
+    #accessibility-nav li.contrast-high {
+      background: black; }
+      #accessibility-nav li.contrast-high a {
+        color: yellow; }
+
+/* example stuff */
+body.contrast-high {
+  background-color: black; }
+  body.contrast-high .container, body.contrast-high #main-content, body.contrast-high header, body.contrast-high footer, body.contrast-high #disclaimer, body.contrast-high .heading {
+    background: black;
+    border-color: black; }
+  body.contrast-high p, body.contrast-high h2, body.contrast-high h3, body.contrast-high h4, body.contrast-high span, body.contrast-high td, body.contrast-high th, body.contrast-high a#text {
+    color: white; }
+  body.contrast-high h1, body.contrast-high li, body.contrast-high a {
+    color: yellow; }
+  body.contrast-high li.contrast-default a {
+    color: black !important; }
+  body.contrast-high .navbar li a {
+    color: white; }
+    body.contrast-high .navbar li a:hover {
+      color: yellow; }
+  body.contrast-high .navbar li.active a {
+    color: yellow;
+    border-color: yellow; }
+    body.contrast-high .navbar li.active a:hover {
+      color: yellow; }
+  body.contrast-high .goal-indicators div span {
+    border-color: white !important;
+    color: white !important; }
+  body.contrast-high .goal-indicators .indicator-cards a {
+    color: white !important; }
+  body.contrast-high .goal-indicators .indicator-cards span.status {
+    color: black !important; }
+  body.contrast-high #main-content #fields label {
+    background: black;
+    color: white; }
+    body.contrast-high #main-content #fields label:hover, body.contrast-high #main-content #fields label:focus {
+      background: white;
+      color: black; }
+  body.contrast-high #toolbar button {
+    background-color: black !important;
+    border-color: white;
+    color: white; }
+  body.contrast-high .danger {
+    background-color: red; }
+  body.contrast-high .warning {
+    background-color: yellow; }
+  body.contrast-high .success {
+    background-color: green; }
+  body.contrast-high .statuses strong {
+    color: white; }
+  body.contrast-high .statuses .value {
+    color: white !important; }
+  body.contrast-high .variable-options {
+    background: black;
+    color: white; }
+    body.contrast-high .variable-options div {
+      background: black;
+      color: white; }
+    body.contrast-high .variable-options button {
+      background: black;
+      color: white !important;
+      border-color: white; }
+  body.contrast-high .breadcrumb {
+    background: white; }
+    body.contrast-high .breadcrumb a {
+      color: black !important; }
+  body.contrast-high span.match {
+    color: black !important; }
+  @media screen and (max-width: 768px) {
+    body.contrast-high .navbar.navbar-default {
+      background: black;
+      color: white; }
+    body.contrast-high .navbar .top-level li.active {
+      background: white; }
+      body.contrast-high .navbar .top-level li.active span {
+        color: black; }
+    body.contrast-high .navbar .menu-target {
+      background: black; }
+    body.contrast-high .navbar ul.navbar-nav li a {
+      background: black; } }
