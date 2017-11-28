@@ -860,8 +860,10 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 50px;
+  height: auto;
   /* Set the fixed height of the footer here */ }
+  footer div {
+    margin: .25em auto; }
   footer img {
     float: left;
     margin-right: 12px;
