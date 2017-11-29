@@ -770,6 +770,9 @@ h5 + .btn-download {
         margin-right: 0; }
     #main-content #selectionsTable table th, #main-content #selectionsTable table td {
       white-space: nowrap; }
+    #main-content #selectionsTable .table-footer-text p {
+      font-size: 0.85em;
+      margin: 0 0 5px; }
   #main-content .statuses strong {
     font-weight: normal; }
   #main-content .statuses > div {
