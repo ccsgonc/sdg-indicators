@@ -240,6 +240,7 @@ ul {
 
 .btn-download {
   margin-top: 1.5rem;
+  margin-right: 0.8rem;
   border: none !important;
   background: #0F8243 !important; }
   .btn-download:hover, .btn-download:active, .btn-download:focus {
@@ -484,12 +485,13 @@ h5 + .btn-download {
   padding-top: 15px;
   padding-bottom: 15px; }
   #main-content .collapsible {
+    border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
     border-left: 1px solid #d4d4d4;
-    border-right: 1px solid #d4d4d4; }
-    #main-content .collapsible:first-child {
-      border-top: 1px solid #e0e0e0; }
+    border-right: 1px solid #d4d4d4;
+    margin-bottom: 10px; }
     #main-content .collapsible h3 {
+      font-size: 1.8rem;
       cursor: pointer;
       padding: 8px 12px;
       margin: 0;
@@ -913,6 +915,9 @@ footer {
   #page-content thead {
     padding-bottom: 10px;
     border-bottom: 1pt solid #E5E6E7; }
+
+.js #headlineTable {
+  display: none; }
 
 .no-js #indicatorData > .col-md-3 {
   display: none; }
