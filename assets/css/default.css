@@ -980,6 +980,36 @@ footer {
 /* example stuff */
 body.contrast-high {
   background-color: black; }
+  body.contrast-high .table {
+    background: black; }
+  body.contrast-high .btn {
+    background: white !important;
+    color: black !important; }
+    body.contrast-high .btn:hover {
+      background: yellow !important; }
+    body.contrast-high .btn:focus {
+      background: yellow !important; }
+  body.contrast-high div#units {
+    color: white; }
+  body.contrast-high .nav-tabs {
+    border-color: yellow; }
+  body.contrast-high #main-content #fields .bar .selected {
+    background-color: white; }
+  body.contrast-high #main-content #fields .variable-selector .variable-hint {
+    color: white; }
+  body.contrast-high #main-content .nav-tabs .nav-item.active a {
+    background: yellow;
+    color: black;
+    border-color: yellow; }
+  body.contrast-high a.nav-link:focus {
+    background: white;
+    color: black; }
+  body.contrast-high caption {
+    color: white; }
+  body.contrast-high .table-hover tbody tr:hover {
+    background: yellow; }
+    body.contrast-high .table-hover tbody tr:hover td {
+      color: black; }
   body.contrast-high .container, body.contrast-high #main-content, body.contrast-high header, body.contrast-high footer, body.contrast-high #disclaimer, body.contrast-high .heading {
     background: black;
     border-color: black; }
@@ -991,12 +1021,14 @@ body.contrast-high {
     color: black !important; }
   body.contrast-high .navbar li a {
     color: white; }
-    body.contrast-high .navbar li a:hover {
+    body.contrast-high .navbar li a:hover, body.contrast-high .navbar li a:focus {
       color: yellow; }
   body.contrast-high .navbar li.active a {
     color: yellow;
     border-color: yellow; }
     body.contrast-high .navbar li.active a:hover {
+      color: yellow; }
+    body.contrast-high .navbar li.active a:focus {
       color: yellow; }
   body.contrast-high .goal-indicators div span {
     border-color: white !important;
@@ -1008,7 +1040,10 @@ body.contrast-high {
   body.contrast-high #main-content #fields label {
     background: black;
     color: white; }
-    body.contrast-high #main-content #fields label:hover, body.contrast-high #main-content #fields label:focus {
+    body.contrast-high #main-content #fields label:hover {
+      background: white;
+      color: black; }
+    body.contrast-high #main-content #fields label:focus {
       background: white;
       color: black; }
   body.contrast-high #toolbar button {
