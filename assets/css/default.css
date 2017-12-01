@@ -530,9 +530,11 @@ h5 + .btn-download {
       padding: 8px 12px; }
   #main-content h4 {
     margin-bottom: 1.5rem; }
-  #main-content #indicatorData.no-series > .col-md-3 {
+  #main-content #indicatorData.no-series #series-help {
     display: none; }
-  #main-content #indicatorData.no-series > .col-md-9 {
+  #main-content #indicatorData.no-series.no-units > .col-md-3 {
+    display: none; }
+  #main-content #indicatorData.no-series.no-units > .col-md-9 {
     width: 100%; }
   #main-content #toolbar button {
     width: 100%;
