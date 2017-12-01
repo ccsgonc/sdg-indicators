@@ -84,9 +84,11 @@ header {
         font-size: 0.75em; } }
 
 .navbar-brand {
-  display: block; }
+  display: block;
+  width: 75%;
+  max-width: 300px; }
   .navbar-brand img {
-    width: 300px; }
+    width: 100%; }
 
 .navbar {
   margin-bottom: 32px; }
@@ -980,9 +982,11 @@ footer {
   border: 0; }
 
 #accessibility-nav {
+  width: 25%;
   padding-top: 10px;
   padding-right: 20px;
-  float: right; }
+  float: right;
+  text-align: right; }
   #accessibility-nav li {
     display: inline-block;
     list-style: none; }
