@@ -991,7 +991,8 @@ footer {
       width: 25px;
       max-height: 25px;
       text-align: center;
-      margin: 0.25em; }
+      margin: 0.25em;
+      margin-top: 0.1em; }
       #accessibility-nav li.contrast a {
         margin: auto;
         text-decoration: none; }
