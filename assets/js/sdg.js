@@ -1369,6 +1369,7 @@ var indicatorSearch = function(inputElement, indicatorDataStore) {
               id: result.id,
               title: result.title,
               href: result.href,
+              status: result.status
             };
 
         if(!goal) {
